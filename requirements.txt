@@ -1,0 +1,35 @@
+# OME-Zarr Pathology Toolkit
+# Dépendances pour la suite d'outils de pathologie numérique
+# CHU Besançon - Anatomopathologie computationnelle
+
+# === Dépendances principales ===
+openslide-python>=1.3.0      # Lecture des formats propriétaires (MRXS, NDPI, SVS...)
+zarr>=2.16.0                 # Stockage pyramidal OME-Zarr
+numpy>=1.24.0                # Manipulation de tableaux
+Pillow>=10.0.0               # Traitement d'images
+dask>=2024.1.0               # Traitement paresseux par tuiles
+
+# === Compression ===
+numcodecs>=0.12.0            # Codecs de compression (Blosc, ZSTD)
+imagecodecs>=2024.1.0        # Codecs additionnels (JPEG, JPEG-XL)
+
+# === Interface graphique ===
+# tkinter est inclus dans Python standard (pas besoin de pip)
+
+# === Dépendances optionnelles pour le serveur web (omezarr_annotator) ===
+# Décommenter si utilisation du serveur d'annotation web
+# fastapi>=0.109.0
+# uvicorn>=0.27.0
+
+# === Notes d'installation ===
+# 
+# 1. OpenSlide nécessite la librairie système openslide :
+#    - Ubuntu/Debian : sudo apt install openslide-tools libopenslide-dev
+#    - macOS : brew install openslide
+#    - Windows : télécharger depuis https://openslide.org/download/
+#
+# 2. Pour la compression JPEG-XL optimale :
+#    pip install imagecodecs[all]
+#
+# 3. Installation complète :
+#    pip install -r requirements.txt
